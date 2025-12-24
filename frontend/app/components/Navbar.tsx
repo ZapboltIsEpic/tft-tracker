@@ -6,32 +6,50 @@ import Button from "@mui/material/Button";
 import ToolBar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import Link from "next/link";
+import { TextField } from "@mui/material";
 
 export default function Navbar() {
   return (
     <div>
       <AppBar sx={{ bgcolor: "black" }} position="static">
-        <ToolBar sx={{ ml: 40, mr: 40 }}>
-          <Image
-            src="/Season_2019_-_Victorious_Pengu_-_Gold_Emote.webp"
-            aria-hidden="true"
-            width={48}
-            height={48}
-            alt="Victorious Pengu Gold Emote"
+        <ToolBar
+          sx={{
+            ml: 40,
+            mr: 40,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Link href="/" className="flex flex-row">
+            <Image
+              src="/Season_2019_-_Victorious_Pengu_-_Gold_Emote.webp"
+              aria-hidden="true"
+              width={48}
+              height={48}
+              alt="Victorious Pengu Gold Emote"
+            />
+            <Typography
+              sx={{
+                fontSize: 32,
+                fontWeight: 700,
+                fontFamily: "sans-serif",
+              }}
+            >
+              TFTracker
+            </Typography>
+          </Link>
+          <TextField
+            label="Search Player"
+            variant="outlined"
+            sx={{ backgroundColor: "#313236" }}
           />
-          <Typography
-            sx={{
-              flexGrow: 1,
-              fontSize: 32,
-              fontWeight: 700,
-              fontFamily: "sans-serif",
-            }}
-          >
-            TFTracker
-          </Typography>
+
           {/* login button */}
           <div>
             <Button
+              component={Link}
+              href="/login"
               size="medium"
               sx={{
                 backgroundColor: "#1a1d21",
@@ -40,9 +58,6 @@ export default function Navbar() {
                 },
               }}
               variant="contained"
-              onClick={() => {
-                alert("clicked");
-              }}
             >
               login
             </Button>
