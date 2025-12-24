@@ -1,3 +1,5 @@
+"use client";
+
 import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
@@ -29,7 +31,21 @@ export default function Navbar() {
           </Typography>
           {/* login button */}
           <div>
-            <Button variant="contained">Login</Button>
+            <Button
+              size="medium"
+              sx={{
+                backgroundColor: "#1a1d21",
+                "&:hover": {
+                  opacity: 0.7,
+                },
+              }}
+              variant="contained"
+              onClick={() => {
+                alert("clicked");
+              }}
+            >
+              login
+            </Button>
           </div>
         </ToolBar>
       </AppBar>
