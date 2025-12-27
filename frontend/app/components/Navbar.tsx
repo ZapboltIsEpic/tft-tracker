@@ -39,12 +39,6 @@ export default function Navbar() {
               TFTracker
             </Typography>
           </Link>
-          <TextField
-            label="Search Player"
-            variant="outlined"
-            sx={{ backgroundColor: "#313236" }}
-          />
-
           {/* login button */}
           <div>
             <Button
