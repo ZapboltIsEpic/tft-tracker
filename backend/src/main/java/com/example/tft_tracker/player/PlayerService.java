@@ -1,5 +1,25 @@
 package com.example.tft_tracker.player;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
 public class PlayerService {
-    
+    @Autowired
+    private PlayerRepository playerRepository;
+
+    public List<Player> getAllPlayers() {
+        return playerRepository.findAll();
+    }
+
+    public Optional<Player> getPlayerById(String id) {
+        return playerRepository.findById(id);
+    }
+
+    public Player createPlayer(Player player) {
+        return playerRepository.save(player);
+    }
 }
